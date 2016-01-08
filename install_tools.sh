@@ -1,0 +1,33 @@
+#!/bin/bash
+
+echo *************************************
+echo **                           	    **
+echo ** 	HISTORY CRAWLER		        **
+echo ** 	Install tools		        **
+echo ** 				                **
+echo *************************************
+
+if [[ $UID != 0 ]]; then
+    echo "Please run this script with sudo:"
+    echo "sudo $0 $*"
+    exit 1
+fi
+
+
+echo "Update the repository"
+apt-get update --yes
+apt-get upgrade --yes
+
+echo "Install git first"
+apt-get install git -y
+
+echo "The install vim and the awesome vimrc"
+# awesome vimrc requires ctags
+apt-get install vim -y
+apt-get install ctags -y
+
+git clone https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+
+echo ** Installation finished	**
