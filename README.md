@@ -7,27 +7,29 @@ This past summer, Ian Milligan, Mary Beth Start and I worked on customizing a De
 
 ##2. Disable attempts to load software from CDROM. Log into the VM, open a terminal (e.g., Konsole, UXterm) and using the following command, comment out the cdrom line of sources.list
 
-
-sudo vi /etc/apt/sources.list
+    sudo vi /etc/apt/sources.list
 
 ##3. Update and upgrade.
 
-sudo apt-get update
-sudo apt-get upgrade
+    sudo apt-get update
+    sudo apt-get upgrade
 
 ##4. Install Guest Additions for VirtualBox VM using the reference here.
 
 ###4a. Install DKMS.
 
 
-sudo apt-get install dkms
-sudo apt-get install linux-headers-3.14-1-486
+    sudo apt-get install dkms
+    sudo apt-get install linux-headers-3.14-1-486
 
-###4b. Reboot the guest system with Leave->Restart in KDE.
+###4b. Reboot 
+the guest system with Leave->Restart in KDE.
 
-###4c. Insert CD image. In VirtualBox menubar of guest machine (i.e., the Debian virtual machine) choose Devices->Insert Guest Additions CD Image.
+###4c. Insert CD image. 
+In VirtualBox menubar of guest machine (i.e., the Debian virtual machine) choose Devices->Insert Guest Additions CD Image.
 
-###4d. (Optional) Check drive has been mounted. Open up Dolphin File Manager. On the left hand side you should see the VBOXADDITIONS drive has been mounted.
+###4d. (Optional) Check drive has been mounted. 
+Open up Dolphin File Manager. On the left hand side you should see the VBOXADDITIONS drive has been mounted.
 
 ###4e. Open a terminal and enter the following commands.
 
