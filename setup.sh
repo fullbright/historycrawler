@@ -14,14 +14,14 @@ if [[ $UID != 0 ]]; then
 fi
 
 echo "Installing base tools"
-
+./install_tools.sh
 
 echo "Installing necessary tools for history crawler to work"
-
+./install_history_tools.sh
 
 echo "Setting few things up"
-
+# add configuration commands here
 
 echo "Great ! Now we can run the application"
-
+echo "Use the ./run.sh command to start the application"
 
