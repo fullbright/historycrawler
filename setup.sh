@@ -13,6 +13,9 @@ if [[ $UID != 0 ]]; then
     exit 1
 fi
 
+cd $(dirname "$0")
+echo "Current directory is $(pwd)"
+
 echo "Installing base tools"
 ./install_tools.sh
 
