@@ -34,4 +34,14 @@ sh ./Meandre-1.4.12/Start-Infrastructure.sh
 sh ./Meandre-1.4.12/Start-Workbench.sh
 echo "Done."
 
+echo "Starting Voyant Server ..."
+cd ~
+java -jar VoyantServer.jar &
+echo "Done."
+
+echo "Starting Mallet application"
+cd ~
+java -jar TopicModelingTool.jar &
+echo "Done."
+
 echo "Finished starting all the applications."
