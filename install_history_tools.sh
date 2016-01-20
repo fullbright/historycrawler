@@ -67,6 +67,7 @@ cp ./csvfix/bin/csvfix /usr/local/bin/
 cd ~
 rm -r neilb*
 
+
 echo "Installing python pip, numpy, nltk"
 cd ~
 wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
@@ -134,6 +135,8 @@ wget http://topic-modeling-tool.googlecode.com/files/TopicModelingTool.jar
 echo "Downloading historian"
 cd ~
 git clone https://github.com/ianmilligan1/Historian-WARC-1.git
+cp -r ~/Historian-WARC-1/WARC/hanzo-warc/ ~/
+rm -r ~/Historian-WARC-1 
 
 echo "Download and install Meandre"
 cd ~
@@ -154,10 +157,19 @@ cd node-v0.10.28
 ./configure && make 
 make install 
 
+cd ~
 git clone https://github.com/atom/atom 
 cd atom script/build 
 script/grunt install 
-sh atom.sh
+#sh atom.sh
+
+echo "Install Voyant Server"
+cd ~
+mkdir Voyant-Server 
+cd Voyant-Server 
+wget http://dev.voyant-tools.org/downloads/current/VoyantServer.zip 
+unzip VoyantServer.zip 
+#java -jar VoyantServer.jar
 
 
 cd ~
