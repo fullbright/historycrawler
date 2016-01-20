@@ -144,6 +144,22 @@ cd Meandre-1.4.12
 #sh Start-Infrastructure.sh
 #sh Start-Workbench.sh
 
+echo "Install Git Atom Nodejs"
+cd ~
+apt-get install nodejs 
+apt-get install libgnome-keyring-dev 
+wget http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz 
+tar xzvf node-v0.10.28.tar.gz 
+cd node-v0.10.28 
+./configure && make 
+make install 
+
+git clone https://github.com/atom/atom 
+cd atom script/build 
+script/grunt install 
+sh atom.sh
+
+
 cd ~
 echo "*********** History tools installation ended.  ***************"
 
