@@ -29,7 +29,7 @@ usermod -a -G vboxsf hcu
 
 echo "Image, text and document processing tools and OCR."
 apt-get install default-jdk -y
-apt-get imagej -y
+apt-get install imagej -y
 apt-get install pandoc -y
 apt-get install tre-agrep -y 
 apt-get install pdftk -y
@@ -149,8 +149,8 @@ cd Meandre-1.4.12
 
 echo "Install Git Atom Nodejs"
 cd ~
-apt-get install nodejs 
-apt-get install libgnome-keyring-dev 
+apt-get install nodejs -y
+apt-get install libgnome-keyring-dev -y
 wget http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz 
 tar xzvf node-v0.10.28.tar.gz 
 cd node-v0.10.28 
