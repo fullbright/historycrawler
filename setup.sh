@@ -17,7 +17,7 @@ cd $(dirname "$0")
 echo "Current directory is $(pwd)"
 
 echo "Installing base tools"
-./install_tools.sh
+./install_base_tools.sh
 
 echo "Installing necessary tools for history crawler to work"
 ./install_history_tools.sh
