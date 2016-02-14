@@ -28,8 +28,9 @@ echo "Give the hcu user permissions to interact with shared folder by adding him
 usermod -a -G vboxsf hcu
 
 echo "Image, text and document processing tools and OCR."
-apt-get install default-jdk -y
+apt-get install default-jdk zip unzip -y
 apt-get install imagej -y
+apt-get install imagemagick -y
 apt-get install pandoc -y
 apt-get install tre-agrep -y 
 apt-get install pdftk -y
