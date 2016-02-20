@@ -35,6 +35,7 @@ apt-get install pandoc -y
 apt-get install tre-agrep -y 
 apt-get install pdftk -y
 apt-get install tesseract-ocr tesseract-ocr-eng -y
+apt-get install conky conky-all lua5.1 lua5.2 -y
 
 echo "Install graphviz and swish-e."
 apt-get install graphviz -y
