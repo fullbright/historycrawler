@@ -36,6 +36,7 @@ apt-get install tre-agrep -y
 apt-get install pdftk -y
 apt-get install tesseract-ocr tesseract-ocr-eng -y
 apt-get install conky conky-all lua5.1 lua5.2 -y
+apt-get install wfrench -y
 
 echo "Install graphviz and swish-e."
 apt-get install graphviz -y
@@ -173,6 +174,10 @@ wget http://dev.voyant-tools.org/downloads/current/VoyantServer.zip
 unzip VoyantServer.zip 
 #java -jar VoyantServer.jar
 
+echo "Configuring conky"
+echo " " >> ~/.bashrc
+echo "# Ask conky to boot and display the widgets " >> ~/.bashrc
+echo ~/.conky/conky-flattastic/conky_flattastic.sh >> ~/.bashrc
 
 cd ~
 echo "*********** History tools installation ended.  ***************"
