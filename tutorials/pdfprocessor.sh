@@ -20,6 +20,9 @@ mkdir $JOBID
 
 echo Processing PDF file
 
+echo "Extracting information from PDF"
+pdfinfo $PDFFILE > $JOBID/$PDFNAME-initialinfo.txt
+
 echo Extracting text from the PDF
 pdftotext $PDFFILE $JOBID/$PDFNAME-raw-text.txt
 
@@ -39,8 +42,10 @@ pdftk $PDFFILE cat 3east output $JOBID/$PDFNAME-p003-rotated.pdf
 pdftk $PDFFILE cat 230-233 output $JOBID/$PDFNAME-pp230-233-index.pdf
 
 
+echo "Using OCR on the extracted images"
+./ocr.sh $PDFFILE
 
 
-
+pdfinfo $JOBID/$PDFNAME-updated.pdf > $JOBID/$PDFNAME-updatedinfo.txt
 
 
