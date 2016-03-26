@@ -27,19 +27,19 @@ echo Extracting text from the PDF
 pdftotext $PDFFILE $JOBID/$PDFNAME-raw-text.txt
 
 echo Extrating images from the PDF
-mkdir -p $JOBID/images
+mkdir -p $JOBID/images/clean
 pdfimages $PDFFILE $JOBID/images/$PDFNAME
 
-echo Creating a contact sheet with the images
-montage -verbose -label '%f' -define pbm:size=200x200 -geometry 100x100+38+6 -tile 5x $JOBID/images/*.pbm[100x100] $JOBID/images-contact.jpg
+#echo Creating a contact sheet with the images
+#montage -verbose -label '%f' -define pbm:size=200x200 -geometry 100x100+38+6 -tile 5x $JOBID/images/*.ppm[100x100] $JOBID/images-contact.jpg
 
-echo Converting images to pdf
-convert -negate $JOBID/images/*.pbm $JOBID/$JOBID-images.pdf
+#echo Converting images to pdf
+#convert -negate $JOBID/images/*.ppm $JOBID/$JOBID-images.pdf
 
-echo Using PDFK
-pdftk $PDFFILE cat 3east output $JOBID/$PDFNAME-p003-rotated.pdf
+#echo Using PDFK
+#pdftk $PDFFILE cat 3east output $JOBID/$PDFNAME-p003-rotated.pdf
 
-pdftk $PDFFILE cat 230-233 output $JOBID/$PDFNAME-pp230-233-index.pdf
+#pdftk $PDFFILE cat 230-233 output $JOBID/$PDFNAME-pp230-233-index.pdf
 
 
 echo "Using OCR on the extracted images"

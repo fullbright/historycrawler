@@ -19,12 +19,14 @@ PDFFILE=$1
 PDFNAME=$(echo $PDFFILE | cut -f 1 -d '.')
 #JOBID=${$PDFNAME//[[:alpha:]]/}
 JOBID=$(echo $PDFNAME | sed 's/[^a-zA-Z0-9]//g')
-IMAGESPATH=$JOBID/images/
+IMAGESPATH=$JOBID/images
+CLEANIMAGESPATH=$JOBID/images/clean
 
 echo PDFFILE is $PDFFILE
 echo PDFNAME is $PDFNAME
 echo JOBID is $JOBID
 echo IMAGESPATH is $IMAGESPATH
+echo CLEANIMAGESPATH is $CLEANIMAGESPATH
 
 
 echo "Doing OCR ..."
@@ -33,7 +35,13 @@ for f in $IMAGESPATH/*.ppm
 do
     echo "Processing $f file ..."
     IMAGENAME=$(basename $f | cut -f 1 -d '.')
-    tesseract $f $JOBID/$IMAGENAME-ocr
+    OUTPUTFILE=$CLEANIMAGESPATH/$IMAGENAME-clean.ppm
+    echo Cleaning the file $f to $OUTPUTFILE
+    ./textcleaner $f $OUTPUTFILE 
+
+    echo Doing OCR on the file $f
+    tesseract $OUTPUTFILE $JOBID/$IMAGENAME-ocr
+    tesseract $f $JOBID/$IMAGENAME-ocr-original
 done
 
 echo "Assemble all the OCRed files into one"
