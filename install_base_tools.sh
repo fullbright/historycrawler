@@ -7,7 +7,9 @@ echo ** 	Install tools		        **
 echo ** 				                **
 echo *************************************
 
+#CURRENT_USER=$(whoami)
 CURRENT_USER="pi"
+echo "Current user is $CURRENT_USER"
 
 if [[ $UID != 0 ]]; then
     echo "Please run this script with sudo:"
