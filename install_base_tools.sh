@@ -7,6 +7,8 @@ echo ** 	Install tools		        **
 echo ** 				                **
 echo *************************************
 
+CURRENT_USER="pi"
+
 if [[ $UID != 0 ]]; then
     echo "Please run this script with sudo:"
     echo "sudo $0 $*"
@@ -30,7 +32,7 @@ apt-get install aptitude -y
 git clone https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-echo "Give .vim_runtime folder ownership to pi user"
-chown pi:pi ~/.vim_runtime -R
+echo "Give .vim_runtime folder ownership to $CURRENT_USER user"
+chown $CURRENT_USER:$CURRENT_USER ~/.vim_runtime -R
 
 echo ** Installation finished	**
