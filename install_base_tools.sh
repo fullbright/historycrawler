@@ -25,7 +25,7 @@ echo "The install vim and the awesome vimrc"
 # awesome vimrc requires ctags
 apt-get install vim -y
 apt-get install ctags -y
-apt-get instal aptitude -y
+apt-get install aptitude -y
 
 git clone https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
