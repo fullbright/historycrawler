@@ -8,7 +8,9 @@ echo ** 				                **
 echo *************************************
 
 #CURRENT_USER=$(whoami)
-CURRENT_USER="pi"
+#CURRENT_USER="pi"
+if [ -n "$1" ]; then CURRENT_USER=$1; else CURRENT_USER="pi"; fi
+
 echo "Current user is $CURRENT_USER"
 
 if [[ $UID != 0 ]]; then
