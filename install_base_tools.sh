@@ -36,6 +36,9 @@ apt-get install aptitude -y
 git clone https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
+git clone https://github.com/fullbright/bash_awesome.git ~/.bash_awesome
+sh ~/.bash_awesome/install_awesome_bash.sh
+
 echo "Adding customiations to vim awesome"
 echo "colorscheme mayansmoke" >> ~/.vim_runtime/my_configs.vim
 echo "colorscheme peaksea" >> ~/.vim_runtime/my_configs.vim
