@@ -42,6 +42,9 @@ sh ~/.bash_awesome/install_awesome_bash.sh
 echo "Adding customiations to vim awesome"
 echo "colorscheme mayansmoke" >> ~/.vim_runtime/my_configs.vim
 echo "colorscheme peaksea" >> ~/.vim_runtime/my_configs.vim
+echo "set paste" >> ~/.vim_runtime/my_configs.vim
+echo "set number" >> ~/.vim_runtime/my_configs.vim
+echo "set tabstop=4 shiftwidth=4 expandtab" >> ~/.vim_runtime/my_configs.vim
 
 echo "Give .vim_runtime folder ownership to $CURRENT_USER user"
 chown $CURRENT_USER:$CURRENT_USER ~/.vim_runtime -R
