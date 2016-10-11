@@ -295,7 +295,7 @@ Here are some links to help you get started
 
 It happens to me frequently to need to get a machine setup quickly. To have that done, I can run the command below to quickly install a machine.
 
-    curl https://raw.githubusercontent.com/fullbright/historycrawler/master/install_base_tools.sh | sh
+    curl https://raw.githubusercontent.com/fullbright/historycrawler/master/install_base_tools.sh $(whoami) | sh
     curl https://raw.githubusercontent.com/fullbright/historycrawler/master/install_history_tools.sh | sh
     curl https://raw.githubusercontent.com/fullbright/historycrawler/master/install_historycrawler.sh | sh
 
