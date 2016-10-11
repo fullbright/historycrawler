@@ -27,6 +27,9 @@ apt-get upgrade --yes
 echo "Install git first"
 apt-get install git curl -y
 
+echo "Install ssh, byobu"
+apt-get install ssh byobu -y
+
 echo "The install vim and the awesome vimrc"
 # awesome vimrc requires ctags
 apt-get install vim -y
