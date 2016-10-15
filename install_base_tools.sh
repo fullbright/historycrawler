@@ -52,4 +52,25 @@ echo "set tabstop=4 shiftwidth=4 expandtab" >> ~/.vim_runtime/my_configs.vim
 echo "Give .vim_runtime folder ownership to $CURRENT_USER user"
 chown $CURRENT_USER:$CURRENT_USER ~/.vim_runtime -R
 
+echo "Installing automatic backup"
+
+dest="/mnt/backup"
+echo "Creating the destination folder if not exist and ajust privileges"
+mkdir -p $dest
+chown $CURRENT_USER:$CURRENT_USER $dest -R
+
+echo "Copy backup script to it's destination"
+wget https://raw.githubusercontent.com/fullbright/historycrawler/master/backup.sh -O $dest/backup.sh
+chmod +x $dest/backup.sh
+
+echo "Adding the crontab task"
+#write out current crontab
+crontab -u $CURRENT_USER -l > mycron
+#echo new cron into cron file
+#echo "00 09 * * 1-5 echo hello" >> mycron
+echo "0 0 * * * bash $dest/backup.sh" >> mycron
+#install new cron file
+crontab -u $CURRENT_USER mycron
+rm mycron
+
 echo ** Installation finished	**
