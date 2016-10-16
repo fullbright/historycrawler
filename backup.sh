@@ -4,6 +4,8 @@
 # Backup to NFS mount script.
 #
 ####################################
+# Inpired from :
+# https://help.ubuntu.com/lts/serverguide/backup-shellscripts.html
 
 # What to backup. 
 backup_files="/var/spool/mail /etc /root /boot /opt"
