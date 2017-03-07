@@ -26,6 +26,21 @@ echo
 # Backup the files using tar.
 tar czf $dest/$archive_file $backup_files
 
+# Backup docker containers if any
+echo "Backup docker containers if any"
+if which docker; then
+    echo "Docker - Backing up the web data"
+    docker run --rm --volumes-from my_webdata -v $dest:/backup ubuntu tar cvf /backup/backup-webdata-$(hostname)-$(date +%A).tar /var/www/html
+    echo "Docker - Backup finished"
+    
+    echo "Docker - Backing up the mysql database"
+    docker run --rm --volumes-from my_datastore -v $dest:/backup ubuntu tar cvf /backup/backup-mysql-$(hostname)-$(date +%A).tar /var/lib/mysql
+    echo "Docker - Backup finished."
+else
+    echo "Docker executable not found."
+fi
+echo "End of docker backup"
+
 # Print end status message.
 echo
 echo "Backup finished"
