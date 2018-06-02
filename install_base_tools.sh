@@ -74,4 +74,8 @@ echo "0 0 * * * bash $dest/backup.sh" >> mycron
 crontab -u $CURRENT_USER mycron
 rm mycron
 
+echo "Configure git"
+git config --global user.email "full3right@gmail.com"
+git config --global user.name "Full Bright"
+
 echo ** Installation finished	**
