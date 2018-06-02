@@ -32,8 +32,9 @@ apt-get install ssh python python-pip byobu -y
 
 echo "The install vim and the awesome vimrc"
 # awesome vimrc requires ctags
+# bash awesome uses the undistract-me package to get notification on command end
 apt-get install vim -y
-apt-get install ctags -y
+apt-get install ctags undistract-me -y
 apt-get install aptitude -y
 
 git clone https://github.com/amix/vimrc.git ~/.vim_runtime
