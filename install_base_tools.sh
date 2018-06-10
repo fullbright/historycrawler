@@ -37,18 +37,18 @@ apt-get install vim -y
 apt-get install ctags undistract-me diodon arc-theme -y
 apt-get install aptitude -y
 
-git clone https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
+sudo -u $CURRENT_USER git clone https://github.com/amix/vimrc.git ~/.vim_runtime
+sudo -u $CURRENT_USER sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-git clone https://github.com/fullbright/bash_awesome.git ~/.bash_awesome
-sh ~/.bash_awesome/install_awesome_bash.sh
+sudo -u $CURRENT_USER git clone https://github.com/fullbright/bash_awesome.git ~/.bash_awesome
+sudo -u $CURRENT_USER sh ~/.bash_awesome/install_awesome_bash.sh
 
 echo "Adding customiations to vim awesome"
-echo "colorscheme mayansmoke" >> ~/.vim_runtime/my_configs.vim
-echo "colorscheme peaksea" >> ~/.vim_runtime/my_configs.vim
-echo "set paste" >> ~/.vim_runtime/my_configs.vim
-echo "set number" >> ~/.vim_runtime/my_configs.vim
-echo "set tabstop=4 shiftwidth=4 expandtab" >> ~/.vim_runtime/my_configs.vim
+sudo -u $CURRENT_USER echo "colorscheme mayansmoke" >> ~/.vim_runtime/my_configs.vim
+sudo -u $CURRENT_USER echo "colorscheme peaksea" >> ~/.vim_runtime/my_configs.vim
+sudo -u $CURRENT_USER echo "set paste" >> ~/.vim_runtime/my_configs.vim
+sudo -u $CURRENT_USER echo "set number" >> ~/.vim_runtime/my_configs.vim
+sudo -u $CURRENT_USER echo "set tabstop=4 shiftwidth=4 expandtab" >> ~/.vim_runtime/my_configs.vim
 
 echo "Give .vim_runtime folder ownership to $CURRENT_USER user"
 chown $CURRENT_USER:$CURRENT_USER ~/.vim_runtime -R
