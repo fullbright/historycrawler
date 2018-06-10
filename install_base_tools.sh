@@ -13,7 +13,7 @@ if [ -n "$1" ]; then CURRENT_USER=$1; else CURRENT_USER="pi"; fi
 
 echo "Current user is $CURRENT_USER"
 
-if [[ $UID != 0 ]]; then
+if [[ $EUID != 0 ]]; then
     echo "Please run this script with sudo:"
     echo "sudo $0 $*"
     exit 1
