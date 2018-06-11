@@ -13,7 +13,7 @@ if [ -n "$1" ]; then CURRENT_USER=$1; else CURRENT_USER="pi"; fi
 
 echo "Current user is $CURRENT_USER"
 
-if [[ $EUID != 0 ]]; then
+if [ $EUID != 0 ]; then
     echo "Please run this script with sudo:"
     echo "sudo $0 $*"
     exit 1
@@ -75,7 +75,7 @@ crontab -u $CURRENT_USER mycron
 rm mycron
 
 echo "Configure git"
-git config --global user.email "full3right@gmail.com"
-git config --global user.name "Full Bright"
+sudo -u $CURRENT_USER git config --global user.email "full3right@gmail.com"
+sudo -u $CURRENT_USER git config --global user.name "Full Bright"
 
 echo ** Installation finished	**
