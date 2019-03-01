@@ -38,7 +38,7 @@ apt-get install ctags -y
 apt-get install aptitude -y
 
 echo "Install rclone for automatic synchronisation of files in the cloud"
-apt-get install rclone -y
+curl https://rclone.org/install.sh | bash
 
 sudo -u $CURRENT_USER git clone https://github.com/amix/vimrc.git ~/.vim_runtime
 sudo -u $CURRENT_USER sh ~/.vim_runtime/install_awesome_vimrc.sh
