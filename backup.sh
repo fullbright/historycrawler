@@ -48,3 +48,7 @@ date
 
 # Long listing of files in $dest to check file sizes.
 ls -lh $dest
+
+# Upload the archive to google drive
+echo "Uploading $dest/$archive_file to Google drive"
+rclone copy $dest/$archive_file sergiobackuptechnical:eve.local
